@@ -1,0 +1,20 @@
+/*
+<< algorithm_pipeline_field_names::MONGO_PIPELINE_DISTANCE_KEY << "sads" << algorithm_pipeline_field_names::MONGO_PIPELINE_MATCH_EXPIRATION_TIME_VAR << '$' + algorithm_pipeline_field_names::MONGO_PIPELINE_TIME_STATS_VAR + '.' + algorithm_pipeline_field_names::MONGO_PIPELINE_MATCH_EXPIRATION_TIME_VAR << algorithm_pipeline_field_names::MONGO_PIPELINE_FINAL_POINTS_VAR << open_document
+    << "$toDouble" << '$' + algorithm_pipeline_field_names::MONGO_PIPELINE_FINAL_POINTS_VAR 
+<< close_document<< algorithm_pipeline_field_names::MONGO_PIPELINE_MATCH_STATISTICS_VAR << open_document
+    << "$mergeObjects" << open_array        
+        << open_document
+            << user_account_keys::LAST_TIME_FIND_MATCHES_RAN << '$' + user_account_keys::LAST_TIME_FIND_MATCHES_RAN 
+            << algorithm_pipeline_field_names::MONGO_PIPELINE_TIME_MATCH_RAN_VAR << bsoncxx::types::b_int64{userAccountValues.currentTimestamp.count()} 
+            << algorithm_pipeline_field_names::MONGO_PIPELINE_EARLIEST_START_TIME_VAR << bsoncxx::types::b_int64{userAccountValues.earliestTimeFrameStartTimestamp.count()} 
+            << algorithm_pipeline_field_names::MONGO_PIPELINE_MAX_POSSIBLE_TIME_VAR << bsoncxx::types::b_int64{userAccountValues.endOfTimeFrameTimestamp.count()} 
+            << algorithm_pipeline_field_names::MONGO_PIPELINE_TIME_FALL_OFF_VAR << '$' + algorithm_pipeline_field_names::MONGO_PIPELINE_TIME_FALL_OFF_VAR 
+            << algorithm_pipeline_field_names::MONGO_PIPELINE_CATEGORY_OR_ACTIVITY_POINTS_KEY << '$' + algorithm_pipeline_field_names::MONGO_PIPELINE_TIME_STATS_VAR + '.' + algorithm_pipeline_field_names::MONGO_PIPELINE_CATEGORY_OR_ACTIVITY_POINTS_KEY 
+            << algorithm_pipeline_field_names::MONGO_PIPELINE_INACTIVITY_POINTS_TO_SUBTRACT_KEY << '$' + algorithm_pipeline_field_names::MONGO_PIPELINE_INACTIVITY_POINTS_TO_SUBTRACT_KEY 
+            << user_account_keys::accounts_list::ACTIVITY_STATISTICS << '$' + algorithm_pipeline_field_names::MONGO_PIPELINE_TIME_STATS_VAR + '.' + user_account_keys::accounts_list::ACTIVITY_STATISTICS 
+            
+        << close_document
+        
+    << close_array
+<< close_document
+*/

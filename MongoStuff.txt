@@ -1,0 +1,17 @@
+distanceToUser: sads,
+                matchExpirationTime: "$timeStats.matchExpirationTime",
+                finalPoints: {
+                    "$toDouble" : "$finalPoints"
+                },
+                matchStatistics: {
+                    $mergeObjects: [{ //merge single document because the times don't seem to store in C++ with just the document used
+                        "dFr": "$dFr",
+                        currentTime: MY_CURRENT_TIME,
+                        earliestStartTime: EARLIEST_START_TIME,
+                        maxPossibleTime: MAX_POSSIBLE_TIME,
+                        timeFalloff: "$timeFalloff",
+                        categoryOrActivityPoints: "$timeStats.categoryOrActivityPoints",
+                        inactivityPointsToSubtract: "$inactivityPointsToSubtract",
+                        activityStatistics: "$timeStats.activityStatistics",
+                    }]
+                }
