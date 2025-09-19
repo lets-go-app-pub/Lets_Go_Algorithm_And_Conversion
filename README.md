@@ -51,8 +51,8 @@ Authoring happens in **MongoDB aggregation (JavaScript)** for readability; a sma
 ---
 
 ## Related
-- **Server (C++)** — executes the converted pipeline: https://github.com/lets-go-app-pub/Lets_Go_Server  
-- **Protobuf Definitions** — shared messages & RPCs: https://github.com/lets-go-app-pub/Lets_Go_Protobuf
+- **Server (C++)** — stateless hub, gRPC/Protobuf, MongoDB  
+  👉 [`Lets_Go_Server`](https://github.com/lets-go-app-pub/Lets_Go_Server)
 
 ## Status & compatibility
 Portfolio reference. Converter targets the bsoncxx API used at the time; modern toolchains may require minor adjustments.
